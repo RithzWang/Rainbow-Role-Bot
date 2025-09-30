@@ -3,6 +3,9 @@ const { token, server, role, interval } = require('./config.json');
 const client = new Discord.Client({
     intents: 3276799
 });
+
+const keep_alive = require('./keep_alive.js')
+
 client.login(token);
 client.on('ready', () => {
     try{
