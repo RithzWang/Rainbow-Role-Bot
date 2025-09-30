@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
-const { token, server, role, interval } = require('./config.json');
+const { server, role, interval } = require('./config.json');
 const client = new Discord.Client({
     intents: 3276799
 });
 
 const keep_alive = require('./keep_alive.js')
 
-client.login(token);
+client.login(process.env.token);
 client.on('ready', () => {
     try{
     console.log(`[!] — Logged in as ${client.user.tag} (${client.user.id})`);
